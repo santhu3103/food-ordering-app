@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+
+}
+body {
+overflow: hidden; 
+}
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100vh;
+  background-color: black;
+}
