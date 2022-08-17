@@ -1,8 +1,8 @@
-const cart = () =>{
+const Cart = () =>{
     return (
-        <div className="text-white"><Cart/></div>
+        <div className="text-white">Cart</div>
         
     )
 }
 
-export default cart;
+export default Cart;
