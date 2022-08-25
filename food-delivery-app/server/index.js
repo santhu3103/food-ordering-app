@@ -6,7 +6,8 @@ const db = require ("./db");
 
 const app = express();
 
-cont productRouter = require ("./routes/productRouter")
+const productRouter = require ("./routes/productRouter");
+const { default: mongoose } = require("mongoose");
 
 var corsOptions ={
     origin:"http://localhost:3000"
@@ -18,7 +19,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:true}));
 
 
+
 db.on('error',console.error.bind(console,'MongoDB connection error'))
+
+
+
 
 app.get("/",(req,res)=>{
     res.json({message:"welcome to food orderning"})

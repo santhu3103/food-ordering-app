@@ -9,13 +9,24 @@ router.get('./product',async (req, res)=> {
         const products=await Product.find()
         res.status(200).send ({data:products})
     } catch (err) {
-        res.status.(400)send({error:err})    }
+        res.status(400).send({error:err})    }
 })
 
-router.get('/product-by-categories',async(req.res)=>{
+router.get('/product-by-categories',async(req,res) =>{
     try{
 
-        const product = await Product
+        const product = await Product.aggregate([
+            {$match:{}},
+            {$group:{
+                _id: '$category',
+                products:{$push:'$$ROOT'}
+            }},
+
+            {$products:{name:'$_id',products:1,_id:0}}
+        ])
+        res.status(200).send({data:products})
+    } catch (err){
+        res.status(400).send({error:err})
     }
 })
 

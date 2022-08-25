@@ -1,11 +1,6 @@
-import { urlencoded } from "body-parser";
-
-const dbName ='food-orderning';
-
+const dbName = 'food-ordering';
 const dbHost = 'localhost';
-
 const dbPort = 2717;
-
-module.exports{
-    url:`mongodb://${dbHost}:${dbPort}/${dbName}`
+module.exports = {
+    url: `mongodb://${dbHost}:${dbPort}/${dbName}`
 }
